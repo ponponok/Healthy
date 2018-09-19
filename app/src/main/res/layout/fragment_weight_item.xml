@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/weight_form_backBtn"
+        android:hint="Back"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="50dp"/>
+    <EditText
+        android:id="@+id/weight_form_date"
+        android:hint="Date ex. 21 Jan 2018"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="50dp" />
+    <EditText
+        android:id="@+id/weight_form_weight"
+        android:hint="Weight(kg)"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="50dp" />
+    <Button
+        android:id="@+id/weight_form_saveBtn"
+        android:hint="Save"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="50dp"/>
+
+</LinearLayout>
+</ScrollView>

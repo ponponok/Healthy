@@ -18,7 +18,7 @@ import healthypond017.healthy.weight.WeightFragment;
 
 public class MenuFragment extends Fragment {
     FirebaseAuth _auth;
-    String[] list = {"BMI", "WEIGHT", "DELETE", "LOGOUT"};
+    String[] list = {"BMI", "WEIGHT", "LOGOUT"};
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

@@ -58,7 +58,7 @@ public class LoginFragment extends Fragment {
                                         .replace(R.id.main_view, new MenuFragment())
                                         .commit();
                             } else {
-                                Toast.makeText(getActivity(), "Plase confirm your email", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), "Please confirm your email", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {

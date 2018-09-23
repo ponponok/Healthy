@@ -24,6 +24,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import healthypond017.healthy.MenuFragment;
 import healthypond017.healthy.R;
 
 public class WeightFragment extends Fragment {
@@ -68,6 +69,7 @@ public class WeightFragment extends Fragment {
             }
         });
         initAdd();
+        initBack();
     }
     public void initAdd(){
         Button _addBtn = (Button) getView().findViewById(R.id.weight_addBtn);
@@ -100,5 +102,20 @@ public class WeightFragment extends Fragment {
                 }
             }
         }
+    }
+
+    public void initBack(){
+        Button _addBtn = (Button) getView().findViewById(R.id.weight_backBtn);
+        _addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.main_view, new MenuFragment())
+                        .addToBackStack(null)
+                        .commit();
+                Log.d("System", "[WeightForm] Back to menu");
+            }
+        });
     }
 }

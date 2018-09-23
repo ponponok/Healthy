@@ -84,6 +84,7 @@ public class RegisterFragment extends Fragment {
                         .beginTransaction()
                         .replace(R.id.main_view, new LoginFragment())
                         .commit();
+                Toast.makeText(getActivity(), "Register complete", Toast.LENGTH_SHORT).show();
 
             }
         }).addOnFailureListener(new OnFailureListener() {

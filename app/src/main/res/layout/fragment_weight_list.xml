@@ -10,6 +10,14 @@
         android:layout_gravity="center"
         android:layout_width="200dp"
         android:layout_height="50dp" />
+
+    <Button
+        android:id="@+id/weight_backBtn"
+        android:hint="Back"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="50dp" />
     <ListView
         android:id="@+id/weight_list"
         android:layout_marginTop="25dp"

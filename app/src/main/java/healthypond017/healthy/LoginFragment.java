@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginFragment extends Fragment {
     FirebaseAuth _auth;
@@ -30,17 +31,18 @@ public class LoginFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         _auth = FirebaseAuth.getInstance();
-        if(!_auth.getCurrentUser().getUid().isEmpty()){
+        FirebaseUser user =_auth.getCurrentUser();
+        if(user != null){
             getActivity().getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.main_view, new MenuFragment())
                     .addToBackStack(null)
                     .commit();
         }
-        else{
+
             initRegisterBtn();
             initLoginBtn();
-        }
+
 
     }
 

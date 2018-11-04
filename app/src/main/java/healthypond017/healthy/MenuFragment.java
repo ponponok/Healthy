@@ -14,11 +14,13 @@ import android.widget.ListView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+
+import healthypond017.healthy.sleep.SleepFragment;
 import healthypond017.healthy.weight.WeightFragment;
 
 public class MenuFragment extends Fragment {
     FirebaseAuth _auth;
-    String[] list = {"BMI", "WEIGHT", "LOGOUT"};
+    String[] list = {"BMI", "WEIGHT", "SLEEP", "LOGOUT"};
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -56,6 +58,13 @@ public class MenuFragment extends Fragment {
                     getActivity().getSupportFragmentManager()
                             .beginTransaction()
                             .replace(R.id.main_view, new LoginFragment())
+                            .commit();
+                }else if(_menuAdapter.getItem(position).equals("SLEEP")){
+                    Log.d("System", "[MenuFragment] Go to SLEEP");
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.main_view, new SleepFragment())
+                            .addToBackStack(null)
                             .commit();
                 }
 

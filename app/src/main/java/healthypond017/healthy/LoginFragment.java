@@ -30,8 +30,18 @@ public class LoginFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         _auth = FirebaseAuth.getInstance();
-        initRegisterBtn();
-        initLoginBtn();
+        if(!_auth.getCurrentUser().getUid().isEmpty()){
+            getActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.main_view, new MenuFragment())
+                    .addToBackStack(null)
+                    .commit();
+        }
+        else{
+            initRegisterBtn();
+            initLoginBtn();
+        }
+
     }
 
     void initLoginBtn(){

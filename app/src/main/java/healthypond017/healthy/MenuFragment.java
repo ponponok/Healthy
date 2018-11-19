@@ -15,12 +15,13 @@ import android.widget.ListView;
 import com.google.firebase.auth.FirebaseAuth;
 
 
+import healthypond017.healthy.post.PostFragment;
 import healthypond017.healthy.sleep.SleepFragment;
 import healthypond017.healthy.weight.WeightFragment;
 
 public class MenuFragment extends Fragment {
     FirebaseAuth _auth;
-    String[] list = {"BMI", "WEIGHT", "SLEEP", "LOGOUT"};
+    String[] list = {"BMI", "WEIGHT", "SLEEP", "POST","LOGOUT"};
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -64,6 +65,13 @@ public class MenuFragment extends Fragment {
                     getActivity().getSupportFragmentManager()
                             .beginTransaction()
                             .replace(R.id.main_view, new SleepFragment())
+                            .addToBackStack(null)
+                            .commit();
+                }else if(_menuAdapter.getItem(position).equals("POST")){
+                    Log.d("System", "[MenuFragment] Go to POST");
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.main_view, new PostFragment())
                             .addToBackStack(null)
                             .commit();
                 }
